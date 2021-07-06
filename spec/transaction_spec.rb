@@ -18,5 +18,10 @@ describe Transaction do
           transaction = Transaction.new(balance: 100, deposit: 200, withdraw: 100)
           expect(transaction.withdraw).to eq 100
         end
+
+        it "initializes with a date" do 
+          transaction = Transaction.new(balance: 100, deposit: 200, withdraw: 100, date: Time.now.strftime('%d/%m/%Y'))
+          expect(transaction.date).to eq Time.now.strftime('%d/%m/%Y')
+        end
     end
 end

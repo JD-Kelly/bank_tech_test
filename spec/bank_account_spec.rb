@@ -28,7 +28,13 @@ describe BankAccount do
 
         it "raises error when withdrawal amount is more than balance" do 
             account.deposit(100)
-            expect { account.withdraw(200) }.to raise_error("Insufficient funds, please add more money or choose a different amount")
+            expect { account.withdraw(200) }.to raise_error "Insufficient funds, please add more money or choose a different amount" 
+        end
+    end
+
+    describe "initialize" do
+        it "initializes with an empty transactions array" do
+            expect(account.transactions).to eq []
         end
     end
 end
