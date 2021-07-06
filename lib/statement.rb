@@ -1,9 +1,17 @@
-class Statement 
+# frozen_string_literal: true
 
-    require_relative 'bank_account'
-    attr_reader :header
-    
-    def initialize
-        @header = "balance || deposit || withdraw || date"
-    end
+class Statement
+  require_relative 'bank_account'
+  require_relative 'statement'
+  require_relative 'transaction'
+  attr_reader :header
+
+  def initialize
+    @header = 'date || deposit || withdraw || balance'
+  end
+
+  def display_statement(each_transaction)
+    puts @header
+    puts each_transaction.join("\n")
+  end
 end
