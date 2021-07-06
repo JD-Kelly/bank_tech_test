@@ -42,4 +42,10 @@ describe BankAccount do
             account.deposit(100)
             expect(account.transactions.length).to eq 1
         end
+
+        it "stores withdraw transaction in transactions array" do
+            account.deposit(100)
+            account.withdraw(50)
+            expect(account.transactions.length).to eq 2
+        end
 end

@@ -19,6 +19,8 @@ class BankAccount
          fail "Insufficient funds, please add more money or choose a different amount" if amount > @balance
            
          @balance -= amount
+         withdraw_transaction = Transaction.new(balance: @balance, withdraw: amount)
+         transactions.push(withdraw_transaction)
          "Thanks, you withdrew £#{amount}"
     end
 end
