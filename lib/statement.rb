@@ -1,9 +1,7 @@
 # frozen_string_literal: true
+require_relative 'bank_account'
 
 class Statement
-  require_relative 'bank_account'
-  require_relative 'statement'
-  require_relative 'transaction'
   attr_reader :header
 
   def initialize

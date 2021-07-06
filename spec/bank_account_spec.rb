@@ -14,6 +14,11 @@ describe BankAccount do
       account.deposit(100)
       expect(account.balance).to eq 100
     end
+
+    it 'stores deposit transaction in transactions array' do
+      account.deposit(100)
+      expect(account.transactions.length).to eq 1
+    end
   end
 
   describe '#withdraw' do
@@ -34,22 +39,21 @@ describe BankAccount do
         account.withdraw(200)
       end.to raise_error 'Insufficient funds, please add more money or choose a different amount'
     end
+
+    it 'stores withdraw transaction in transactions array' do
+      account.deposit(100)
+      account.withdraw(50)
+      expect(account.transactions.length).to eq 2
+    end
   end
 
   describe 'initialize' do
     it 'initializes with an empty transactions array' do
       expect(account.transactions).to eq []
     end
-  end
 
-  it 'stores deposit transaction in transactions array' do
-    account.deposit(100)
-    expect(account.transactions.length).to eq 1
-  end
-
-  it 'stores withdraw transaction in transactions array' do
-    account.deposit(100)
-    account.withdraw(50)
-    expect(account.transactions.length).to eq 2
+    it 'initialises with a balance of zero' do 
+      expect(account.balance).to eq 0
+    end
   end
 end
