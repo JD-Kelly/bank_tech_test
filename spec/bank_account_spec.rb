@@ -13,4 +13,17 @@ describe BankAccount do
             expect(account.balance).to eq 100
         end
     end
+
+    describe "#withdraw" do 
+        it "can withdraw money from an account" do 
+            account.deposit(100)
+            expect(account.withdraw(50)).to eq "Thanks, you withdrew £50"
+        end
+
+        it "decreases balance when money is withdrawn" do 
+            account.deposit(100)
+            account.withdraw(50)
+            expect(account.balance).to eq 50
+        end
+    end
 end
