@@ -37,4 +37,9 @@ describe BankAccount do
             expect(account.transactions).to eq []
         end
     end
+ 
+        it "stores deposit transaction in transactions array" do
+            account.deposit(100)
+            expect(account.transactions.length).to eq 1
+        end
 end

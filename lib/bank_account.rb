@@ -10,6 +10,8 @@ class BankAccount
 
     def deposit(amount)
         @balance += amount
+        deposit_transaction = Transaction.new(balance: @balance, deposit: amount)
+        transactions.push(deposit_transaction)
         "Thanks for your deposit of £#{amount}"
     end
 
