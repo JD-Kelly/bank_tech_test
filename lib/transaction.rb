@@ -9,4 +9,8 @@ class Transaction
         @date = date
     end
 
+    def transaction_display
+        "#{@date} || #{@deposit} || #{@withdraw} || #{@balance}"
+    end
+
 end

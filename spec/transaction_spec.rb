@@ -24,4 +24,11 @@ describe Transaction do
           expect(transaction.date).to eq Time.now.strftime('%d/%m/%Y')
         end
     end
+
+    describe "#transaction_display" do 
+      it "displays a transaction" do 
+        transaction = Transaction.new(date: Time.now.strftime('%d/%m/%Y'), deposit: 200, withdraw: 100, balance: 100)
+        expect(transaction.transaction_display).to eq "#{Time.now.strftime('%d/%m/%Y')} || 200 || 100 || 100"
+      end
+    end
 end
