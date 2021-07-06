@@ -8,11 +8,11 @@ class BankAccount
 
     def deposit(amount)
         @balance += amount
-        "Thanks for your deposit of £100"
+        "Thanks for your deposit of £#{amount}"
     end
 
     def withdraw(amount)
         @balance -= amount
-        "Thanks, you withdrew £50"
+        "Thanks, you withdrew £#{amount}"
     end
 end
