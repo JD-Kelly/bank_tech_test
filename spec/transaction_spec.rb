@@ -13,5 +13,10 @@ describe Transaction do
           transaction = Transaction.new(balance: 100, deposit: 200)
           expect(transaction.deposit).to eq 200
         end
+
+        it "initializes with a withdrawal" do 
+          transaction = Transaction.new(balance: 100, deposit: 200, withdraw: 100)
+          expect(transaction.withdraw).to eq 100
+        end
     end
 end

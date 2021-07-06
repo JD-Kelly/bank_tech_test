@@ -1,10 +1,11 @@
 class Transaction
 
-    attr_reader :balance, :deposit
+    attr_reader :balance, :deposit, :withdraw
     
-    def initialize(balance: nil, deposit: nil)
+    def initialize(balance: nil, deposit: nil, withdraw: nil)
         @balance = balance
         @deposit = deposit
+        @withdraw = withdraw
     end
 
 end
