@@ -25,5 +25,10 @@ describe BankAccount do
             account.withdraw(50)
             expect(account.balance).to eq 50
         end
+
+        it "raises error when withdrawal amount is more than balance" do 
+            account.deposit(100)
+            expect { account.withdraw(200) }.to raise_error("Insufficient funds, please add more money or choose a different amount")
+        end
     end
 end

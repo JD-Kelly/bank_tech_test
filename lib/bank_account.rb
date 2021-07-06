@@ -12,7 +12,9 @@ class BankAccount
     end
 
     def withdraw(amount)
-        @balance -= amount
-        "Thanks, you withdrew £#{amount}"
+         fail "Insufficient funds, please add more money or choose a different amount" if amount > @balance
+           
+         @balance -= amount
+         "Thanks, you withdrew £#{amount}"
     end
 end
