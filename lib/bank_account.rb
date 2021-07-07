@@ -22,7 +22,7 @@ class BankAccount
 
     @balance -= amount
     withdraw_transaction = Transaction.new(balance: @balance, withdraw: amount)
-    transactions.push(withdraw_transaction)
+    @transactions.push(withdraw_transaction)
     "Thanks, you withdrew £#{amount}"
   end
 

@@ -52,7 +52,7 @@ describe BankAccount do
       expect(account.transactions).to eq []
     end
 
-    it 'initialises with a balance of zero' do 
+    it 'initialises with a balance of zero' do
       expect(account.balance).to eq 0
     end
   end
