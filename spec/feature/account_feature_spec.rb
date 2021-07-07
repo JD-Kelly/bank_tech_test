@@ -7,9 +7,7 @@ describe 'feature_test' do
         account.deposit(100)
         account.withdraw(50)
         header = "date || credit || debit || balance \n"
-        account.statement
         expect { account.statement }.to output(/#{header}/n).to_stdout
     end
 end
         
-
