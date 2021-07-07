@@ -7,10 +7,6 @@ describe BankAccount do
 
   describe '#deposit' do
     it 'can deposit money into an account' do
-      expect(account.deposit(100)).to eq 'Thanks for your deposit of £100'
-    end
-
-    it 'increases balance when money is deposited' do
       account.deposit(100)
       expect(account.balance).to eq 100
     end
@@ -24,11 +20,6 @@ describe BankAccount do
   describe '#withdraw' do
     it 'can withdraw money from an account' do
       account.deposit(100)
-      expect(account.withdraw(50)).to eq 'Thanks, you withdrew £50'
-    end
-
-    it 'decreases balance when money is withdrawn' do
-      account.deposit(100)
       account.withdraw(50)
       expect(account.balance).to eq 50
     end
@@ -37,7 +28,7 @@ describe BankAccount do
       account.deposit(100)
       expect do
         account.withdraw(200)
-      end.to raise_error 'Insufficient funds, please add more money or choose a different amount'
+      end.to raise_error 'Insufficient funds'
     end
 
     it 'stores withdraw transaction in transactions array' do

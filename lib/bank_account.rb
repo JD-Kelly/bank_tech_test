@@ -13,17 +13,15 @@ class BankAccount
   def deposit(amount)
     @balance += amount
     deposit_transaction = Transaction.new(balance: @balance, deposit: amount)
-    transactions.push(deposit_transaction)
-    "Thanks for your deposit of £#{amount}"
+    @transactions.push(deposit_transaction)
   end
 
   def withdraw(amount)
-    raise 'Insufficient funds, please add more money or choose a different amount' if amount > @balance
+    raise 'Insufficient funds' if amount > @balance
 
     @balance -= amount
     withdraw_transaction = Transaction.new(balance: @balance, withdraw: amount)
     @transactions.push(withdraw_transaction)
-    "Thanks, you withdrew £#{amount}"
   end
 
   def statement
