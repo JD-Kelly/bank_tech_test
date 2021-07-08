@@ -1,7 +1,9 @@
 # Bank Account
 
-* Make deposits and withdraw
-* Show account statement (date, amount, balance)
+The aim of this programme was to allow users to:
+
+* Make deposits and withdraw from their bank account
+* Show the account statement highlighting the date, amount either deposited or withdrawn and the balance
 
 # Criteria
 * Given a client makes a deposit of 1000 on 10-01-2012
@@ -43,9 +45,29 @@ So I can keep track of my spending
 I would like a history of my latest transactions.
 ```
 
+# Technologies
+
+* Programming Language: Ruby
+* Testing Framework: Rspec
+* Gems: Rubocop (Linting), Simplecov (Code Coverage)
+
+
 # How to run programme
 
 * Clone this repo 
 * Terminal: Run bundle install to install dependencies
 * Terminal: Run rspec to run unit tests
-* Terminal: Run irb -r './lib/account.rb'
+* Terminal: Run irb -r './lib/bank_account.rb'
+
+```
+:001 > new_account = BankAccount.new
+:002 > new_account.deposit(100)
+:003 > new_account.deposit(25)
+:004 > new_account.withdraw(100)
+:005 > new_account.statement
+
+date || deposit || withdraw || balance
+08/07/2021 || 100.00 ||  || 100.00
+08/07/2021 || 25.00 ||  || 125.00
+08/07/2021 ||  || 100.00 || 25.00
+```
