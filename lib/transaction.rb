@@ -11,11 +11,11 @@ class Transaction
   end
 
   def transaction_display
-  "#{@date} || #{format_display(@deposit)} || #{format_display(@withdraw)} || #{format_display(@balance)}"
+    "#{@date} || #{format_display(@deposit)} || #{format_display(@withdraw)} || #{format_display(@balance)}"
   end
-end
 
-private
-def format_display(amount)
-  '%.2f' % amount unless amount.nil?
+  private
+  def format_display(amount)
+    '%.2f' % amount unless amount.nil?
+  end
 end

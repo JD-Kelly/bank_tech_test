@@ -38,7 +38,7 @@ describe BankAccount do
     end
   end
 
-  describe 'initialize' do
+  describe '#initialize' do
     it 'initializes with an empty transactions array' do
       expect(account.transactions).to eq []
     end
